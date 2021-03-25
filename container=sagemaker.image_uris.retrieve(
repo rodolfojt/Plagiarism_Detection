@@ -1,0 +1,1 @@
+container=sagemaker.image_uris.retrieve("xgboost", region, "1.2-1")
