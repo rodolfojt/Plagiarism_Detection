@@ -57,9 +57,6 @@ class BinaryClassifier(nn.Module):
 		"""
 		
 		# define the feedforward behavior
-		# x = x.t()
-		# lengths = x[0,:]
-		# x = x[1:,:]
 		x = torch.tanh(self.fc1(x))
 		x = torch.tanh(self.hidden1(x))
 		x = self.dense((self.hidden2(x)))	
