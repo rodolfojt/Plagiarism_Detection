@@ -35,6 +35,7 @@ class BinaryClassifier(nn.Module):
 		self.hidden1 = nn.Linear(self.hidden_dim, self.hidden_dim)
 		self.hidden2 = nn.Linear(self.hidden_dim, self.hidden_dim)
 		self.outpt = nn.Linear(self.hidden_dim,self.output_dim)
+		self.dense = nn.Linear(in_features=hidden_dim, out_features=1)
 
 		nn.init.xavier_uniform_(self.fc1.weight)
 		nn.init.zeros_(self.fc1.bias)
@@ -56,12 +57,12 @@ class BinaryClassifier(nn.Module):
 		"""
 		
 		# define the feedforward behavior
-		x = x.t()
-		lengths = x[0,:]
-		x = x[1:,:]
+		# x = x.t()
+		# lengths = x[0,:]
+		# x = x[1:,:]
 		x = torch.tanh(self.fc1(x))
 		x = torch.tanh(self.hidden1(x))
-		x = torch.tanh(self.hidden2(x))	
-		x = self.sig(self.outpt(x))
+		x = self.dense((self.hidden2(x)))	
+		x = self.sig(x)
 		return x.squeeze()
 	
