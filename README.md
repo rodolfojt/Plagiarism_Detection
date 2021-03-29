@@ -17,13 +17,13 @@ at [their university webpage](https://ir.shef.ac.uk/cloughie/resources/plagiaris
 
 ## Results
 
-* Accuracy score in the test set: **0.92**
+* Accuracy score in the test set: **100%**
 
 * Number of training examples: **70**
 
 * Number of test examples: **25**
 
-> Predicted class labels: `[1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,1,0,0]`
+> Predicted class labels: `[1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,1,1,0,0]`
 
 > True class labels: `[1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,1,1,0,0]`
 
